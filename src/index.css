@@ -1,0 +1,10 @@
+@import "./fonts.css";
+@import "./tailwind.css";
+
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    line-height: 2;
+}
