@@ -6,31 +6,31 @@ interface Person {
     relation?: string;
 }
 
+// Added 'variant' to handle your color requests
 interface EntourageGroup {
     title: string;
     icon: React.ElementType;
     members: Person[];
+    variant?: "gray" | "beige" | "sage" | "pink" | "default";
 }
 
 const entourageData: EntourageGroup[] = [
     {
         title: "Parents of the Groom",
         icon: Heart,
-        members: [
-            { name: "Benigno Anuyo" },
-            { name: "Luciana Anuyo" },
-        ],
+        variant: "pink",
+        members: [{ name: "Benigno Anuyo" }, { name: "Luciana Anuyo" }],
     },
     {
         title: "Grandparent of the Bride",
         icon: Heart,
-        members: [
-            { name: "Clemente Doblon" },
-        ],
+        variant: "pink",
+        members: [{ name: "Clemente Doblon" }],
     },
     {
         title: "Principal Sponsors",
         icon: Users,
+        variant: "gray",
         members: [
             { name: "Macario Garcia and Lucena Garcia" },
             { name: "Armando Buklatin and Ma. Ruena Buklatin" },
@@ -42,20 +42,19 @@ const entourageData: EntourageGroup[] = [
     {
         title: "Best Men",
         icon: Users,
-        members: [
-            { name: "Nicole John Luceros" },
-        ],
+        variant: "beige",
+        members: [{ name: "Nicole John Luceros" }],
     },
     {
         title: "Maids of Honor",
         icon: Users,
-        members: [
-            { name: "Maribeth Tolete" },
-        ],
+        variant: "sage",
+        members: [{ name: "Maribeth Tolete" }],
     },
     {
         title: "Groomsmen",
         icon: Users,
+        variant: "beige",
         members: [
             { name: "Jerome Alingod" },
             { name: "Sandy Roy Balbuena" },
@@ -64,12 +63,13 @@ const entourageData: EntourageGroup[] = [
             { name: "John Rutherford Malimban" },
             { name: "Jemuel Manalac" },
             { name: "Joseph Quinonero" },
-            { name: "Jedidiah Tabago " },
+            { name: "Jedidiah Tabago" },
         ],
     },
     {
         title: "Bridesmaids",
         icon: Users,
+        variant: "sage",
         members: [
             { name: "Raquel Doblon" },
             { name: "Mary Grace Doblon" },
@@ -84,13 +84,13 @@ const entourageData: EntourageGroup[] = [
     {
         title: "Flower Girl",
         icon: Sparkles,
-        members: [
-            { name: "Kaisie Nicolette Luceros" },
-        ],
+        variant: "pink",
+        members: [{ name: "Kaisie Nicolette Luceros" }],
     },
     {
         title: "Ring Bearers",
         icon: Sparkles,
+        variant: "pink",
         members: [
             { name: "Marc Dylan Cornelio" },
             { name: "John Maverick Plata" },
@@ -101,28 +101,40 @@ const entourageData: EntourageGroup[] = [
 const EntourageCard = ({ group }: { group: EntourageGroup }) => {
     const Icon = group.icon;
 
+    // Color mapping based on your request
+    const bgColors = {
+        gray: "bg-slate-100 border-slate-300",
+        beige: "bg-[#F5F5DC] border-[#E1D8C3]",
+        sage: "bg-[#D1D9D0] border-[#B8C4B6]",
+        pink: "bg-[#FADADD]/50 border-[#F4C2C2]",
+        default: "bg-white border-gray-100",
+    };
+
     return (
         <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
-            className="bg-white rounded-lg p-8 shadow-lg"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            /* break-inside-avoid prevents cards from splitting across columns in masonry */
+            className={`break-inside-avoid mb-6 rounded-2xl p-6 shadow-sm border ${
+                bgColors[group.variant || "default"]
+            }`}
         >
-            <div className="flex items-center justify-center gap-3 mb-6">
-                <Icon className="text-secondary" size={24} />
-                <h3 className="text-primary text-2xl font-semibold text-center">
+            <div className="flex items-center gap-3 mb-4">
+                <Icon className="text-primary/60" size={20} />
+                <h3 className="text-primary text-xl font-serif font-semibold">
                     {group.title}
                 </h3>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-2">
                 {group.members.map((member, index) => (
-                    <div key={index} className="text-center">
-                        <p className="text-primary font-medium">
+                    <div key={index}>
+                        <p className="text-primary/80 font-medium leading-tight">
                             {member.name}
                         </p>
                         {member.relation && (
-                            <p className="text-primary/60 text-sm">
+                            <p className="text-primary/50 text-xs italic">
                                 {member.relation}
                             </p>
                         )}
@@ -135,54 +147,31 @@ const EntourageCard = ({ group }: { group: EntourageGroup }) => {
 
 export const EntourageSection = () => {
     return (
-        <section id="entourage" className="py-20 bg-background">
+        <section id="entourage" className="py-20 bg-[#FAF9F6]">
             <div className="container mx-auto px-4">
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <h2 className="text-4xl sm:text-6xl font-serif text-primary mb-4">
                         Our Beloved Wedding Entourage
                     </h2>
-                    <p className="text-primary/70 text-lg max-w-2xl mx-auto">
-                        We are honored to have these special people stand with
-                        us on our big day
-                    </p>
-                </motion.div>
+                    <div className="w-24 h-1 bg-secondary/30 mx-auto mb-4" />
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto mb-16">
+                {/* CSS Columns create a Masonry effect without heavy JS libraries */}
+                <div className="columns-1 md:columns-2 lg:columns-3 gap-6 max-w-7xl mx-auto">
                     {entourageData.map((group, index) => (
                         <EntourageCard key={index} group={group} />
                     ))}
                 </div>
 
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="max-w-3xl mx-auto text-center"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    className="mt-20 max-w-2xl mx-auto text-center border-t border-primary/10 pt-10"
                 >
-                    <div className="bg-secondary/10 rounded-lg p-8 sm:p-12 border-t-4 border-secondary">
-                        <Heart
-                            className="text-secondary mx-auto mb-6"
-                            size={48}
-                            fill="currentColor"
-                        />
-                        <blockquote className="text-primary/80 text-lg sm:text-2xl italic mb-6 leading-relaxed">
-                            "We are so grateful to have each and every one of
-                            you as part of our journey. Your love, support, and
-                            friendship have shaped who we are today. Thank you
-                            for standing by our side as we begin this beautiful
-                            chapter together."
-                        </blockquote>
-                        <p className="text-primary font-semibold text-xl">
-                            - Rochelle & Jayson
-                        </p>
-                    </div>
+                    <p className="text-primary/60 italic text-lg leading-relaxed">
+                        "Your love and friendship have shaped our journey. Thank you for standing by us."
+                    </p>
+                    <p className="mt-4 font-serif text-xl text-primary">- Rochelle & Jayson -</p>
                 </motion.div>
             </div>
         </section>

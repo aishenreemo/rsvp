@@ -59,7 +59,7 @@ export const Navigation = () => {
                         />
                         <button
                             onClick={() => scrollToSection("home")}
-                            className={`font-script text-xl font-semibold transition-colors text-nowrap ${
+                            className={`font-script text-xl font-script transition-colors text-nowrap ${
                                 isScrolled
                                     ? "text-background/90"
                                     : "hover:text-background text-shadow-[0_0.5px_2px_var(--background)]"

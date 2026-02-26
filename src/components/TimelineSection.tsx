@@ -71,7 +71,7 @@ const TimelineItem = ({
                 <div className="text-secondary font-bold text-lg mb-2">
                     {event.time}
                 </div>
-                <h3 className="text-primary text-xl font-semibold mb-2">
+                <h3 className="text-primary text-xl font-script mb-2">
                     {event.title}
                 </h3>
                 <p className="text-primary/70">{event.description}</p>

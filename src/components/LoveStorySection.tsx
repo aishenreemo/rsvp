@@ -9,34 +9,34 @@ interface StoryEvent {
 
 const storyEvents: StoryEvent[] = [
     {
-        year: "2018",
-        title: "First Meeting",
+        year: "June 2013",
+        title: "Where It All Began",
         description:
-            "We met at a mutual friend's party and instantly connected over our shared love of adventure and coffee.",
+            "Our story began at Polytechnic University of the Philippines – Taguig Campus. Two classmates, two different personalities, one unexpected beginning.",
     },
     {
-        year: "2019",
-        title: "First Date",
+        year: "May 2016",
+        title: "A Spark Ignites",
         description:
-            "Our first official date was a sunset hike that ended with stargazing and deep conversations about our dreams.",
+            "After years of knowing each other, Jayson finally found the courage to court Roca. What started as classroom conversations slowly turned into something deeper.",
     },
     {
-        year: "2021",
-        title: "Moving In Together",
+        year: "December 2016",
+        title: "Choosing Forever",
         description:
-            "We decided to take the next step and create a home together, building our future one day at a time.",
+            "We officially became a couple — choosing each other, not just for a season, but for a lifetime.",
     },
     {
-        year: "2024",
-        title: "The Proposal",
+        year: "April 2025",
+        title: "A Lifetime of Yes",
         description:
-            "On a beautiful beach during sunset, Jayson got down on one knee and asked Rochelle to be his forever.",
+            "Under a sky full of dreams, Jayson asked the most important question… and Roca said YES 💍✨",
     },
     {
-        year: "2026",
-        title: "Our Wedding Day",
+        year: "May 2026",
+        title: "Our Best Adventure Begins",
         description:
-            "The day we've been waiting for - celebrating our love with family and friends!",
+            "Today, we stand hand in hand, ready to say “I do” and begin our forever.",
     },
 ];
 
