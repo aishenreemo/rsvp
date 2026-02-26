@@ -8,7 +8,6 @@ import { EntourageSection } from "./components/EntourageSection";
 import { MemoriesSection } from "./components/MemoriesSection";
 import { TimelineSection } from "./components/TimelineSection";
 import { InfoSection } from "./components/InfoSection";
-import { RSVPSection } from "./components/RSVPSection";
 import { Footer } from "./components/Footer";
 
 export default function App() {
@@ -26,7 +25,6 @@ export default function App() {
                     <MemoriesSection />
                     <TimelineSection />
                     <InfoSection />
-                    <RSVPSection />
                 </main>
 
                 <Footer />

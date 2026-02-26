@@ -12,7 +12,6 @@ const navItems = [
     { id: "memories", label: "Memories" },
     { id: "timeline", label: "Timeline" },
     { id: "info", label: "Information" },
-    { id: "rsvp", label: "RSVP" },
 ];
 
 export const Navigation = () => {
