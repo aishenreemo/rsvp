@@ -68,13 +68,13 @@ const TimelineItem = ({
             className={`flex-1 w-full md:w-auto ${index % 2 === 0 ? "md:text-right" : "md:order-2 md:text-left"} text-center`}
         >
             <div className="bg-white rounded-lg p-6 shadow-lg inline-block max-w-md w-full">
-                <div className="text-secondary font-bold text-lg mb-2">
+                <div className="text-secondary font-bold text-lg mb-2 font-sans">
                     {event.time}
                 </div>
                 <h3 className="text-primary text-xl font-script mb-2">
                     {event.title}
                 </h3>
-                <p className="text-primary/70">{event.description}</p>
+                <p className="text-primary/70 font-sans">{event.description}</p>
             </div>
         </div>
 
@@ -102,7 +102,7 @@ export const TimelineSection = () => {
                     <h2 className="text-4xl sm:text-6xl font-serif text-primary mb-4">
                         The Day Unfolds
                     </h2>
-                    <p className="text-primary/70 text-lg max-w-2xl mx-auto">
+                    <p className="text-primary/70 text-xl max-w-2xl mx-auto font-sans">
                         A timeline of events for our special day
                     </p>
                 </motion.div>

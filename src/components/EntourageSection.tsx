@@ -168,7 +168,7 @@ export const EntourageSection = () => {
                     whileInView={{ opacity: 1 }}
                     className="mt-20 max-w-2xl mx-auto text-center border-t border-primary/10 pt-10"
                 >
-                    <p className="text-primary/60 italic text-lg leading-relaxed">
+                    <p className="text-primary/60 italic text-lg leading-relaxed font-sans">
                         "Your love and friendship have shaped our journey. Thank you for standing by us."
                     </p>
                     <p className="mt-4 font-serif text-xl text-primary">- Rochelle & Jayson -</p>

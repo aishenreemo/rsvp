@@ -63,7 +63,7 @@ const TimelineEvent = ({
                         {event.year}
                     </div>
                     <h3 className="text-primary text-2xl mb-3">{event.title}</h3>
-                    <p className="text-primary/70">{event.description}</p>
+                    <p className="text-primary/70 font-sans">{event.description}</p>
                 </div>
             </div>
 
@@ -77,22 +77,6 @@ const TimelineEvent = ({
         </motion.div>
     );
 };
-
-const CurveBottom = () => (
-    <div className="absolute bottom-0 left-0 right-0">
-        <svg
-            viewBox="0 0 1440 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-full"
-        >
-            <path
-                d="M0,64 C240,100 480,120 720,120 C960,120 1200,100 1440,64 L1440,120 L0,120 Z"
-                fill="#ffffff"
-            />
-        </svg>
-    </div>
-);
 
 export const LoveStorySection = () => {
     return (
@@ -111,7 +95,7 @@ export const LoveStorySection = () => {
                     <h2 className="text-4xl sm:text-6xl font-serif text-primary mb-4">
                         Our Love Story
                     </h2>
-                    <p className="text-primary/70 text-lg max-w-2xl mx-auto">
+                    <p className="text-primary/70 text-xl max-w-2xl mx-auto font-sans">
                         Every love story is beautiful, but ours is our favorite
                     </p>
                 </motion.div>

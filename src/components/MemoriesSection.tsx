@@ -111,9 +111,9 @@ export const MemoriesSection = () => {
                     <h2 className="text-4xl sm:text-6xl font-serif text-white mb-4">
                         Our Memories
                     </h2>
-                    <p className="text-white/70 text-lg max-w-2xl mx-auto">
+                    <p className="text-white/70 text-xl max-w-2xl mx-auto font-sans">
                         Capturing the moments that made our love story
-                        unforgettable
+                        unforgettable.
                     </p>
                 </motion.div>
 
@@ -136,7 +136,7 @@ export const MemoriesSection = () => {
                     >
                         <button
                             onClick={handleLoadMore}
-                            className="inline-flex items-center gap-2 px-8 py-3 bg-white text-primary rounded-full hover:bg-white/90 transition-colors shadow-lg font-semibold"
+                            className="inline-flex items-center gap-2 px-8 py-3 bg-white text-primary rounded-full hover:bg-white/90 transition-colors shadow-lg font-semibold font-sans"
                         >
                             Load More Memories
                             <ChevronDown size={20} />

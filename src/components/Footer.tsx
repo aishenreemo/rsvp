@@ -16,8 +16,8 @@ export const Footer = () => {
                     />
 
                     <h3 className="text-2xl font-serif mb-2">{coupleNames}</h3>
-                    <p className="text-background/80 mb-6">
-                        Thank you for being part of our special day
+                    <p className="text-background/80 mb-6 font-sans">
+                        Thank you for being part of our special day.
                     </p>
 
                     <div className="flex gap-6 mb-8">
@@ -45,13 +45,13 @@ export const Footer = () => {
                     </div>
 
                     <div className="border-t border-background/20 pt-6 w-full max-w-md">
-                        <p className="text-background/60 text-sm">
+                        <p className="text-background/60 text-sm font-sans">
                             © {year} {coupleNames}. All rights reserved.
                         </p>
-                        <p className="text-background/60 text-sm mt-2">
+                        <p className="text-background/60 text-sm mt-2 font-sans">
                             Made with{" "}
                             <Heart
-                                className="inline w-4 h-4 text-secondary"
+                                className="inline w-4 h-4 text-beige"
                                 fill="currentColor"
                             />{" "}
                             for our loved ones

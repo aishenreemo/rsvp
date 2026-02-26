@@ -35,7 +35,7 @@ const QRCodePlaceholder = ({ label, QRimg}: { label: string, QRimg: string}) => 
         <div className="size-48 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
             <img src={QRimg} alt={`${label} QR Code`} className="object-contain" />
         </div>
-        <p className="text-primary/70 text-sm">{label}</p>
+        <p className="text-primary/70 text-sm font-sans">{label}</p>
     </div>
 );
 
@@ -67,7 +67,7 @@ export const InfoSection = () => {
                     <h2 className="text-4xl sm:text-6xl font-serif text-primary mb-4">
                         All You Need To Know
                     </h2>
-                    <p className="text-primary/70 text-lg max-w-2xl mx-auto">
+                    <p className="text-primary/70 text-xl max-w-2xl mx-auto font-sans">
                         Important information for our guests
                     </p>
                 </motion.div>
@@ -76,10 +76,10 @@ export const InfoSection = () => {
                     <InfoCard icon={Shirt} title="Dress to Impress">
                         <div className="space-y-4">
                             <div>
-                                <h4 className="text-primary font-semibold mb-2">
+                                <h4 className="text-primary font-semibold mb-2 font-sans">
                                     Dress Code: Semi-Formal
                                 </h4>
-                                <p className="text-primary/70">
+                                <p className="text-primary/70 font-sans">
                                     We invite you to celebrate with us in Modern Garden Formal attire, drawing inspiration from our palette of Muted Pink, Sage Green, Muted Beige, and Dusty Gray. Ladies are encouraged to wear elegant gowns or midi-dresses in these romantic tones—kindly reserving white for the bride—while gentlemen may opt for a Barong Tagalog or a tailored suit in neutral shades like gray, tan, or black.
                                 </p>
                             </div>
@@ -88,13 +88,13 @@ export const InfoSection = () => {
                                     <div key={item.label} className="flex flex-col items-center gap-3">
                                         <div className={`w-16 h-16 rounded-full shadow-inner border-2 ${bgColors[item.color as keyof typeof bgColors]}`} />
                                         <div className="text-center">
-                                            <p className="font-semibold text-primary">{item.label}</p>
-                                            <p className="text-xs text-primary/60 uppercase tracking-widest">{item.desc}</p>
+                                            <p className="font-semibold text-primary font-sans">{item.label}</p>
+                                            <p className="text-xs text-primary/60 uppercase tracking-widest font-sans">{item.desc}</p>
                                         </div>
                                     </div>
                                 ))}
                             </div>
-                            <p className="text-primary/60 text-sm italic mt-4">
+                            <p className="text-primary/60 text-sm italic mt-4 font-sans text-center">
                                 Please avoid wearing white or cream colors to
                                 respect the bride's attire.
                             </p>
@@ -103,7 +103,7 @@ export const InfoSection = () => {
 
                     <InfoCard icon={Gift} title="Gift Guide">
                         <div className="space-y-4">
-                            <p className="text-primary/70">
+                            <p className="text-primary/70 font-sans">
                                 Your presence at our wedding is the greatest
                                 gift of all! However, if you wish to honor us
                                 with a gift, we have set up the following
@@ -114,32 +114,32 @@ export const InfoSection = () => {
                                 <QRCodePlaceholder label="Maya" QRimg={mayaQR}/>
                                 <QRCodePlaceholder label="GCash" QRimg={gcashQR}/>
                             </div>
-                            <p className="text-primary/60 text-sm italic text-center mt-4">
-                                Scan the QR codes above for easy digital gifting
+                            <p className="text-primary/60 text-sm italic text-center mt-4 font-sans">
+                                Scan the QR codes above for easy digital gifting!
                             </p>
                         </div>
                     </InfoCard>
 
                     <InfoCard icon={Camera} title="Unplugged Ceremony">
                         <div className="space-y-4">
-                            <p className="text-primary/70">
+                            <p className="text-primary/70 font-sans">
                                 We kindly request that you put away your phones
                                 and cameras during the ceremony. We want you to
                                 be fully present with us as we exchange our
                                 vows.
                             </p>
                             <div className="bg-secondary/10 rounded-lg p-6 border-l-4 border-secondary">
-                                <p className="text-primary font-semibold mb-2">
+                                <p className="text-primary font-semibold mb-2 font-sans">
                                     📱 No Cameras Until We Say "I Do"
                                 </p>
-                                <p className="text-primary/70">
+                                <p className="text-primary/70 font-sans">
                                     Our professional photographers will capture
                                     every special moment. After the ceremony
                                     concludes, feel free to take all the photos
                                     you'd like during the reception!
                                 </p>
                             </div>
-                            <p className="text-primary/60 text-sm italic">
+                            <p className="text-primary/60 text-sm italic font-sans text-center">
                                 Thank you for helping us keep this moment
                                 intimate and distraction-free.
                             </p>
