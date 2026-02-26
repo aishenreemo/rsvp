@@ -4,6 +4,7 @@ import { CountdownTimer } from "./CountdownTimer";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import heroImage from "/42873578_2185281461491166_3601597392165535744_n.jpg";
 import logoImage from "/RJ_logo.png";
+import qrCode from "/qr.jpg";
 
 const CurveTop = () => (
     <div className="absolute bottom-0 left-0 right-0">
@@ -101,6 +102,12 @@ export const HeroSection = () => {
                     transition={{ duration: 1, delay: 1.5 }}
                     className="mt-10 sm:mt-16"
                 >
+                    <ImageWithFallback
+                        src={qrCode}
+                        alt="QR code"
+                        className="w-full h-full object-cover"
+                    />
+
                     <button
                         onClick={() => {
                             document
