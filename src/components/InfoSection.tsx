@@ -39,7 +39,21 @@ const QRCodePlaceholder = ({ label, QRimg}: { label: string, QRimg: string}) => 
     </div>
 );
 
+const bgColors = {
+    gray: "bg-[var(--dusty-gray)]/60 border-[var(--dusty-gray)]",
+    beige: "bg-[var(--muted-beige)]/60 border-[var(--muted-beige)]",
+    sage: "bg-[var(--sage-green)]/60 border-[var(--sage-green)]",
+    pink: "bg-[var(--muted-pink)]/60 border-[var(--muted-pink)]",
+    default: "bg-white border-gray-100",
+};
+
 export const InfoSection = () => {
+    const codes = [
+        { label: "Sponsors", color: "gray", desc: "Dusty Gray" },
+        { label: "Groomsmen", color: "beige", desc: "Muted Beige" },
+        { label: "Bridesmaids", color: "sage", desc: "Sage Green" },
+        { label: "Family & Kids", color: "pink", desc: "Muted Pink" },
+    ];
     return (
         <section id="info" className="py-20 bg-white">
             <div className="container mx-auto px-4">
@@ -66,30 +80,19 @@ export const InfoSection = () => {
                                     Dress Code: Semi-Formal
                                 </h4>
                                 <p className="text-primary/70">
-                                    We kindly request that our guests dress in
-                                    semi-formal attire. Think cocktail dresses,
-                                    dressy separates, and suits.
+                                    We invite you to celebrate with us in Modern Garden Formal attire, drawing inspiration from our palette of Muted Pink, Sage Green, Muted Beige, and Dusty Gray. Ladies are encouraged to wear elegant gowns or midi-dresses in these romantic tones—kindly reserving white for the bride—while gentlemen may opt for a Barong Tagalog or a tailored suit in neutral shades like gray, tan, or black.
                                 </p>
                             </div>
-                            <div className="grid grid-cols-2 gap-4 mt-4">
-                                <div className="bg-background rounded-lg p-4">
-                                    <p className="font-semibold text-primary mb-1">
-                                        For Her
-                                    </p>
-                                    <p className="text-primary/70 text-sm">
-                                        Cocktail dresses, elegant jumpsuits, or
-                                        dressy separates
-                                    </p>
-                                </div>
-                                <div className="bg-background rounded-lg p-4">
-                                    <p className="font-semibold text-primary mb-1">
-                                        For Him
-                                    </p>
-                                    <p className="text-primary/70 text-sm">
-                                        Suits, dress shirts with slacks, or
-                                        smart blazer combinations
-                                    </p>
-                                </div>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                {codes.map((item) => (
+                                    <div key={item.label} className="flex flex-col items-center gap-3">
+                                        <div className={`w-16 h-16 rounded-full shadow-inner border-2 ${bgColors[item.color as keyof typeof bgColors]}`} />
+                                        <div className="text-center">
+                                            <p className="font-semibold text-primary">{item.label}</p>
+                                            <p className="text-xs text-primary/60 uppercase tracking-widest">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
                             <p className="text-primary/60 text-sm italic mt-4">
                                 Please avoid wearing white or cream colors to

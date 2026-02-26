@@ -116,7 +116,7 @@ export const HeroSection = () => {
                 >
                     <button
                         onClick={() => {
-                            window.open("https://example.com", "_blank", "noopener,noreferrer");
+                            window.open("https://forms.gle/Hp6bX8KzjYT8rrz57", "_blank", "noopener,noreferrer");
                         }}
                         className="bg-secondary font-sans hover:bg-secondary/90 text-background px-8 py-3 sm:px-10 sm:py-4 rounded-full transition-all transform hover:scale-105 shadow-xl backdrop-blur-sm border border-background/10"
                     >
