@@ -38,11 +38,11 @@ export const MusicPlayer = () => {
     return (
         <div className="fixed bottom-8 right-8 z-40">
             <div className="bg-primary/95 backdrop-blur-sm rounded-full shadow-xl p-4 flex items-center gap-3">
-                <Music className="text-beige" size={20} />
+                <Music className="text-background" size={20} />
 
                 <button
                     onClick={togglePlay}
-                    className="text-beige hover:text-white transition-colors"
+                    className="text-background transition-colors"
                     aria-label={isPlaying ? "Pause music" : "Play music"}
                 >
                     {isPlaying ? <Pause size={24} /> : <Play size={24} />}
@@ -50,7 +50,7 @@ export const MusicPlayer = () => {
 
                 <button
                     onClick={toggleMute}
-                    className="text-beige hover:text-white transition-colors"
+                    className="text-background transition-colors"
                     aria-label={isMuted ? "Unmute" : "Mute"}
                 >
                     {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}

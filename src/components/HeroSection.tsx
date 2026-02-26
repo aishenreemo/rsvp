@@ -42,7 +42,7 @@ export const HeroSection = () => {
                     alt="Wedding couple"
                     className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-b from-primary/80 via-primary/30 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-b from-background/80 via-background/30 to-transparent" />
             </div>
 
             <div className="relative z-10 container mx-auto px-4 flex items-center flex-col text-beige pt-20 pb-20">
