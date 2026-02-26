@@ -1,4 +1,4 @@
-import { Heart, Instagram, Facebook, Mail } from "lucide-react";
+import { Heart, Facebook, Mail } from "lucide-react";
 import { useWedding } from "../contexts/WeddingContext";
 
 export const Footer = () => {
@@ -22,21 +22,21 @@ export const Footer = () => {
 
                     <div className="flex gap-6 mb-8">
                         <a
-                            href="#"
-                            className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
-                            aria-label="Instagram"
-                        >
-                            <Instagram size={20} />
-                        </a>
-                        <a
-                            href="#"
+                            href="https://www.facebook.com/rochelle.doblon"
                             className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
                             aria-label="Facebook"
                         >
                             <Facebook size={20} />
                         </a>
                         <a
-                            href="mailto:wedding@example.com"
+                            href="https://www.facebook.com/jayson.anuyo"
+                            className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
+                            aria-label="Facebook"
+                        >
+                            <Facebook size={20} />
+                        </a>
+                        <a
+                            href="mailto:jaysonanuyo11@gmail.com"
                             className="w-10 h-10 rounded-full bg-background/10 hover:bg-background/20 flex items-center justify-center transition-colors"
                             aria-label="Email"
                         >

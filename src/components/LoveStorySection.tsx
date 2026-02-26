@@ -130,7 +130,6 @@ export const LoveStorySection = () => {
                     </div>
                 </div>
             </div>
-            <CurveBottom />
         </section>
     );
 };

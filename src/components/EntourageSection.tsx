@@ -130,7 +130,7 @@ const EntourageCard = ({ group }: { group: EntourageGroup }) => {
             <div className="space-y-2">
                 {group.members.map((member, index) => (
                     <div key={index}>
-                        <p className="text-primary/80 font-medium leading-tight">
+                        <p className="text-primary/80 font-sans leading-tight">
                             {member.name}
                         </p>
                         {member.relation && (
@@ -147,7 +147,7 @@ const EntourageCard = ({ group }: { group: EntourageGroup }) => {
 
 export const EntourageSection = () => {
     return (
-        <section id="entourage" className="py-20 bg-[#FAF9F6]">
+        <section id="entourage" className="py-20 bg-background">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-16">
                     <h2 className="text-4xl sm:text-6xl font-serif text-primary mb-4">

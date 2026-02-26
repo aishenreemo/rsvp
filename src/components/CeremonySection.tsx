@@ -16,13 +16,14 @@ const InfoCard = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-white rounded-lg p-6 shadow-lg text-center"
+        // Swapped: dark background, background text
+        className="bg-background/10 backdrop-blur-sm rounded-lg p-6 shadow-xl text-center border border-white/10"
     >
-        <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-secondary/10 mb-4">
-            <Icon className="text-secondary" size={28} />
+        <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-secondary mb-4">
+            <Icon className="text-primary" size={28} />
         </div>
-        <h3 className="text-primary font-semibold text-lg mb-2">{title}</h3>
-        <div className="text-primary/70">{children}</div>
+        <h3 className="text-background font-semibold text-lg mb-2">{title}</h3>
+        <div className="text-background/70">{children}</div>
     </motion.div>
 );
 
@@ -37,7 +38,8 @@ export const CeremonySection = () => {
     });
 
     return (
-        <section id="ceremony" className="py-20 bg-white">
+        // Swapped: primary background
+        <section id="ceremony" className="py-20 bg-primary">
             <div className="container mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -46,22 +48,22 @@ export const CeremonySection = () => {
                     transition={{ duration: 0.8 }}
                     className="text-center mb-16"
                 >
-                    <h2 className="text-4xl sm:text-6xl font-serif text-primary mb-4">
+                    <h2 className="text-4xl sm:text-6xl font-serif text-background mb-4">
                         Ceremony
                     </h2>
-                    <p className="text-primary/70 text-lg max-w-2xl mx-auto">
+                    <p className="text-background/70 text-lg max-w-2xl mx-auto">
                         Join us as we celebrate the beginning of our forever
                     </p>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
                     <InfoCard icon={Calendar} title="Date & Time">
-                        <p className="text-xl font-medium mb-1">{formattedDate}</p>
-                        <p className="text-lg">{ceremonyTime}</p>
+                        <p className="text-xl font-medium mb-1 text-background">{formattedDate}</p>
+                        <p className="text-lg text-background/80">{ceremonyTime}</p>
                     </InfoCard>
                     <InfoCard icon={MapPin} title="Venue & Location">
-                        <p className="text-xl font-medium mb-1">{venue.name}</p>
-                        <p className="text-lg">{venue.address}</p>
+                        <p className="text-xl font-medium mb-1 text-background">{venue.name}</p>
+                        <p className="text-lg text-background/80">{venue.address}</p>
                     </InfoCard>
                 </div>
 
@@ -72,7 +74,7 @@ export const CeremonySection = () => {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="max-w-5xl mx-auto"
                 >
-                    <div className="rounded-lg overflow-hidden shadow-xl mb-6">
+                    <div className="rounded-lg overflow-hidden shadow-2xl mb-6 border border-background/10">
                         <iframe
                             src={venue.mapUrl}
                             width="100%"
@@ -90,31 +92,23 @@ export const CeremonySection = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.4 }}
-                        className="bg-secondary/10 rounded-lg p-6 border-l-4 border-secondary"
+                        // Swapped: Using secondary as the accent block
+                        className="bg-secondary rounded-lg p-6 border-l-4 border-background"
                     >
                         <div className="flex items-start gap-3">
                             <AlertCircle
-                                className="text-secondary shrink-0 mt-1"
+                                className="text-background shrink-0 mt-1"
                                 size={24}
                             />
                             <div>
-                                <h3 className="text-primary font-semibold text-lg mb-3">
+                                <h3 className="text-background font-bold text-lg mb-3">
                                     Important Notes
                                 </h3>
-                                <ul className="space-y-2 text-primary/70">
-                                    <li>
-                                        • Please arrive 30 minutes before the
-                                        ceremony begins
-                                    </li>
+                                <ul className="space-y-2 text-background/80 font-medium">
+                                    <li>• Please arrive 30 minutes before the ceremony begins</li>
                                     <li>• Parking is available at the venue</li>
-                                    <li>
-                                        • The ceremony will be followed by a
-                                        reception at the same location
-                                    </li>
-                                    <li>
-                                        • For any questions, please contact our
-                                        wedding coordinator
-                                    </li>
+                                    <li>• The ceremony will be followed by a reception at the same location</li>
+                                    <li>• For any questions, please contact our wedding coordinator</li>
                                 </ul>
                             </div>
                         </div>
