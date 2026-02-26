@@ -1,5 +1,8 @@
 import { motion } from "motion/react";
 import { Shirt, Gift, Camera } from "lucide-react";
+import bpiQR from "../assets/images/QRCodes/BPIqr.png";
+import mayaQR from "../assets/images/QRCodes/MayaQR.png";
+import gcashQR from "../assets/images/QRCodes/GCashQR.png";
 
 const InfoCard = ({
     icon: Icon,
@@ -27,14 +30,10 @@ const InfoCard = ({
     </motion.div>
 );
 
-const QRCodePlaceholder = ({ label }: { label: string }) => (
+const QRCodePlaceholder = ({ label, QRimg}: { label: string, QRimg: string}) => (
     <div className="flex flex-col items-center">
-        <div className="w-32 h-32 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
-            <div className="text-primary/40 text-xs text-center px-2">
-                {label}
-                <br />
-                QR Code
-            </div>
+        <div className="size-48 bg-primary/10 rounded-lg flex items-center justify-center mb-2">
+            <img src={QRimg} alt={`${label} QR Code`} className="object-contain" />
         </div>
         <p className="text-primary/70 text-sm">{label}</p>
     </div>
@@ -108,10 +107,9 @@ export const InfoSection = () => {
                                 options:
                             </p>
                             <div className="flex flex-wrap justify-center gap-6 mt-6">
-                                <QRCodePlaceholder label="Bank Transfer" />
-                                <QRCodePlaceholder label="PayPal" />
-                                <QRCodePlaceholder label="Venmo" />
-                                <QRCodePlaceholder label="Gift Registry" />
+                                <QRCodePlaceholder label="BPI" QRimg={bpiQR}/>
+                                <QRCodePlaceholder label="Maya" QRimg={mayaQR}/>
+                                <QRCodePlaceholder label="GCash" QRimg={gcashQR}/>
                             </div>
                             <p className="text-primary/60 text-sm italic text-center mt-4">
                                 Scan the QR codes above for easy digital gifting
