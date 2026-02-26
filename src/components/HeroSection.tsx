@@ -97,7 +97,7 @@ export const HeroSection = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1.5 }}
-                    className="mt-10 sm:mt-16"
+                    className="mt-4"
                 >
                     <ImageWithFallback
                         src={qrCode}
@@ -116,9 +116,7 @@ export const HeroSection = () => {
                 >
                     <button
                         onClick={() => {
-                            document
-                                .getElementById("rsvp")
-                                ?.scrollIntoView({ behavior: "smooth" });
+                            window.open("https://example.com", "_blank", "noopener,noreferrer");
                         }}
                         className="bg-secondary font-sans hover:bg-secondary/90 text-background px-8 py-3 sm:px-10 sm:py-4 rounded-full transition-all transform hover:scale-105 shadow-xl backdrop-blur-sm border border-background/10"
                     >
