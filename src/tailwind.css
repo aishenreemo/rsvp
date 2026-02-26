@@ -9,6 +9,12 @@
     --beige: #f5f1e8;
     --virtual-forest: #2d5a3d;
 
+    /* Theme Colors */
+    --muted-pink: #d9ada4;
+    --sage-green: #859674;
+    --dusty-gray: #cdd3c1;
+    --muted-beige: #e1c39f;
+
     --background: var(--beige);
     --foreground: var(--choco-brown);
     --card: #ffffff;

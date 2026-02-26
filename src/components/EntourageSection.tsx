@@ -40,13 +40,13 @@ const entourageData: EntourageGroup[] = [
         ],
     },
     {
-        title: "Best Men",
+        title: "Best Man",
         icon: Users,
         variant: "beige",
         members: [{ name: "Nicole John Luceros" }],
     },
     {
-        title: "Maids of Honor",
+        title: "Maid of Honor",
         icon: Users,
         variant: "sage",
         members: [{ name: "Maribeth Tolete" }],
@@ -103,10 +103,10 @@ const EntourageCard = ({ group }: { group: EntourageGroup }) => {
 
     // Color mapping based on your request
     const bgColors = {
-        gray: "bg-slate-100 border-slate-300",
-        beige: "bg-[#F5F5DC] border-[#E1D8C3]",
-        sage: "bg-[#D1D9D0] border-[#B8C4B6]",
-        pink: "bg-[#FADADD]/50 border-[#F4C2C2]",
+        gray: "bg-[var(--dusty-gray)]/60 border-[var(--dusty-gray)]",
+        beige: "bg-[var(--muted-beige)]/60 border-[var(--muted-beige)]",
+        sage: "bg-[var(--sage-green)]/60 border-[var(--sage-green)]",
+        pink: "bg-[var(--muted-pink)]/60 border-[var(--muted-pink)]",
         default: "bg-white border-gray-100",
     };
 
@@ -121,13 +121,13 @@ const EntourageCard = ({ group }: { group: EntourageGroup }) => {
                 bgColors[group.variant || "default"]
             }`}
         >
-            <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center gap-3 mb-4 justify-center">
                 <Icon className="text-primary/60" size={20} />
                 <h3 className="text-primary text-xl font-serif font-semibold">
                     {group.title}
                 </h3>
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2 text-center">
                 {group.members.map((member, index) => (
                     <div key={index}>
                         <p className="text-primary/80 font-sans leading-tight">
