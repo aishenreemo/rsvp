@@ -93,9 +93,6 @@ export const HeroSection = () => {
                 >
                     <CountdownTimer />
                 </motion.div>
-
-                <div className="p-16 sm:p-20 lg:p-40" />
-
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -105,9 +102,18 @@ export const HeroSection = () => {
                     <ImageWithFallback
                         src={qrCode}
                         alt="QR code"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-center shrink"
                     />
+                </motion.div>
 
+                <div className="p-30 sm:p-40 lg:p-50" />
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1.5 }}
+                    className="mt-10 sm:mt-16"
+                >
                     <button
                         onClick={() => {
                             document
