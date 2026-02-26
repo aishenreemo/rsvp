@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ChevronDown } from "lucide-react";
@@ -6,23 +6,52 @@ import { ChevronDown } from "lucide-react";
 interface GalleryImage {
     src: string;
     alt: string;
-    caption?: string;
 }
 
-const galleryImages: GalleryImage[] = Array.from({ length: 50 }, (_, i) => {
-    const width = 600;
-    const height = 600 + ((i * 137) % 400);
+const useMemories = () => {
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState<any>(null)
+    const [images, setImages] = useState<GalleryImage[]>([])
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                // 1. Eagerly grab all matches in the target folder
+                // Adjust the path and extensions (*.png, *.jpg, etc.) as needed
+                const modules = import.meta.glob("../assets/images/memories/*.{png,jpg,jpeg,svg,webp}", { eager: true });
+                
+                // 2. Extract the resolved URLs/paths from the modules
+
+                const imagePaths = Object.values(modules).map((mod:any) => mod.default || mod);
+                const images = imagePaths.map((src, index) => ({
+                    src,
+                    alt: `Memory ${index + 1}`,
+                }));
+
+                
+                setImages(images);
+            } catch (err) {
+                console.error("Failed to load gallery images:", err);
+                setError(err);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        fetchImages();
+    }, [])
+
     return {
-        src: `https://picsum.photos/seed/${i + 150}/${width}/${height}`,
-        alt: `Memory ${i + 1}`,
-        caption: i % 3 === 0 ? `Cherished Moment ${i + 1}` : undefined,
-    };
-});
+        loading,
+        error,
+        images,
+    }
+}
 
 const MemoryCard = ({ image, index }: { image: GalleryImage; index: number }) => {
     const rotation = (index * 7 % 5) - 2; 
     const yOffset = (index * 11 % 20); 
-    
+
     const shapes = [
         "rounded-2xl", 
         "rounded-tl-[3rem] rounded-br-[3rem] rounded-tr-xl rounded-bl-xl",
@@ -53,14 +82,6 @@ const MemoryCard = ({ image, index }: { image: GalleryImage; index: number }) =>
                         alt={image.alt}
                         className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    {/* Caption Overlay: Adjusted for visibility on dark theme */}
-                    <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        {image.caption && (
-                            <p className="text-white font-serif text-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                {image.caption}
-                            </p>
-                        )}
-                    </div>
                 </div>
             </div>
         </motion.div>
@@ -69,9 +90,10 @@ const MemoryCard = ({ image, index }: { image: GalleryImage; index: number }) =>
 
 export const MemoriesSection = () => {
     const [visibleCount, setVisibleCount] = useState(9);
+    const gallery = useMemories();
 
     const handleLoadMore = () => {
-        setVisibleCount((prev) => Math.min(prev + 9, galleryImages.length));
+        setVisibleCount((prev) => Math.min(prev + 9, gallery.images.length));
     };
 
     return (
@@ -96,7 +118,7 @@ export const MemoriesSection = () => {
                 </motion.div>
 
                 <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 max-w-7xl mx-auto space-y-8 px-2">
-                    {galleryImages.slice(0, visibleCount).map((image, index) => (
+                    {gallery.images.slice(0, visibleCount).map((image, index) => (
                         <MemoryCard
                             key={index}
                             image={image}
@@ -105,7 +127,7 @@ export const MemoriesSection = () => {
                     ))}
                 </div>
 
-                {visibleCount < galleryImages.length && (
+                {visibleCount < gallery.images.length && (
                     <motion.div
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
