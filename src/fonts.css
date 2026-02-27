@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Arastin Script';
-    src: url('src/assets/fonts/Arastin/Arastin Script.ttf') format('truetype');
+    src: local('Arastin Script'), url('assets/fonts/Arastin/Arastin Script.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'YDMyungjo 550 Pro';
-    src: url('src/assets/fonts/YDMyungjo 550 Pro/YDMyungjo 550 Pro.ttf') format('truetype');
+    src: local('YDMyungjo 550 Pro'), url('assets/fonts/YDMyungjo 550 Pro/YDMyungjo 550 Pro.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
