@@ -23,7 +23,7 @@ const weddingConfig: WeddingConfig = {
     groom: "Jayson",
     coupleNames: "Rochelle & Jayson",
     weddingDate: new Date("2026-05-26T16:00:00"),
-    ceremonyTime: "2:00 PM",
+    ceremonyTime: "4:30 PM",
     venue: {
         name: "Savanna Farm Tagaytay",
         address: "007 Barangay, Alfonso, Cavite",

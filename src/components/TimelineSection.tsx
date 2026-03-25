@@ -9,44 +9,34 @@ interface TimelineEvent {
 
 const events: TimelineEvent[] = [
     {
-        time: "1:30 PM",
-        title: "Guest Arrival",
+        time: "3:30 PM",
+        title: "Guests Should Be Seated",
         description: "Guests begin to arrive and are seated",
     },
     {
-        time: "2:00 PM",
+        time: "4:30 PM",
         title: "Ceremony Begins",
         description: "The wedding ceremony commences",
     },
     {
-        time: "2:45 PM",
+        time: "5:30 PM",
         title: "Cocktail Hour",
         description: "Enjoy drinks and hors d'oeuvres while we take photos",
     },
     {
-        time: "4:00 PM",
-        title: "Reception Begins",
+        time: "7:00 PM",
+        title: "Reception Program Starts",
         description: "Grand entrance of the newlyweds",
     },
     {
-        time: "4:30 PM",
-        title: "Dinner Service",
+        time: "8:00 PM",
+        title: "Dinner",
         description: "Delicious meal and toasts from loved ones",
     },
     {
-        time: "6:00 PM",
-        title: "First Dance",
-        description: "Our first dance as husband and wife",
-    },
-    {
-        time: "6:30 PM",
-        title: "Dancing & Celebration",
-        description: "Dance the night away with us!",
-    },
-    {
         time: "9:00 PM",
-        title: "Grand Exit",
-        description: "Send us off with sparklers as we begin our journey",
+        title: "End of Program",
+        description: "Our first dance as husband and wife",
     },
 ];
 
