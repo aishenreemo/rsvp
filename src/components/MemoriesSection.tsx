@@ -101,6 +101,7 @@ export const MemoriesSection = () => {
         <section id="memories" className="py-20 bg-primary overflow-hidden">
             <div className="container mx-auto px-4">
                 <motion.div
+
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -111,9 +112,19 @@ export const MemoriesSection = () => {
                     <h2 className="text-6xl sm:text-6xl font-serif text-white mb-4">
                         Save The Date
                     </h2>
-                    <p className="text-white/70 text-xl max-w-2xl mx-auto font-sans">
-                        A collection of the photos we’ve taken to celebrate our upcoming wedding.
-                    </p>
+                </motion.div>
+                <motion.div          
+                    initial={{ opacity: 0, y: 20 }}          
+                    whileInView={{ opacity: 1, y: 0 }}          
+                    viewport={{ once: true }}          
+                    transition={{ duration: 0.6 }}          
+                    className="mb-12 text-center"        
+                >          
+                    <video            
+                        src="/prenupvid.mp4"
+                        controls
+                        className="mx-auto max-w-full rounded-2xl shadow-xl"
+                    />
                 </motion.div>
 
                 <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 max-w-7xl mx-auto space-y-8 px-2">
