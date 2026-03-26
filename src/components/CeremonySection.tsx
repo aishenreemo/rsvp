@@ -106,7 +106,6 @@ export const CeremonySection = () => {
                                     <li>• Please arrive 30 minutes before the ceremony begins</li>
                                     <li>• Parking is available at the venue</li>
                                     <li>• The ceremony will be followed by a reception at the same location</li>
-                                    <li>• For any questions, please contact our wedding coordinator</li>
                                 </ul>
                             </div>
                         </div>

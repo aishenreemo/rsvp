@@ -9,7 +9,7 @@ const navItems = [
     { id: "love-story", label: "Our Story" },
     { id: "ceremony", label: "Ceremony" },
     { id: "entourage", label: "Entourage" },
-    { id: "memories", label: "Memories" },
+    { id: "memories", label: "Photos" },
     { id: "timeline", label: "Timeline" },
     { id: "info", label: "Information" },
 ];
@@ -62,7 +62,7 @@ export const Navigation = () => {
                             className={`font-script text-xl transition-colors text-nowrap ${
                                 isScrolled
                                     ? "text-background/90"
-                                    : "hover:text-background text-shadow-[0_0.5px_2px_var(--background)]"
+                                    : "text-shadow-[0_0.5px_2px_var(--background)]"
                             }`}
                         >
                             {coupleNames}
@@ -77,7 +77,7 @@ export const Navigation = () => {
                                 className={`text-sm transition-colors relative group ${
                                     isScrolled
                                         ? "text-background/90"
-                                        : "hover:text-background"
+                                        : ""
                                 }`}
                             >
                                 {item.label}

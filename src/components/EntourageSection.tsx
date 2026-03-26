@@ -11,20 +11,20 @@ interface EntourageGroup {
     title: string;
     icon: React.ElementType;
     members: Person[];
-    variant?: "gray" | "beige" | "sage" | "pink" | "default";
+    variant?: "gray" | "beige" | "sage" | "brown" | "emerald" | "default";
 }
 
 const entourageData: EntourageGroup[] = [
     {
         title: "Parents of the Groom",
         icon: Heart,
-        variant: "pink",
+        variant: "brown",
         members: [{ name: "Benigno Anuyo" }, { name: "Luciana Anuyo" }],
     },
     {
         title: "Grandparent of the Bride",
         icon: Heart,
-        variant: "pink",
+        variant: "emerald",
         members: [{ name: "Clemente Doblon" }],
     },
     {
@@ -34,7 +34,7 @@ const entourageData: EntourageGroup[] = [
         members: [
             { name: "Macario Garcia and Lucena Garcia" },
             { name: "Armando Buklatin and Ma. Ruena Buklatin" },
-            { name: "Mary Jane Caparas and German Caparas" },
+            { name: "German Caparas and Mary Jane Caparas " },
             { name: "Paciano Beltran and Vilma Beltran" },
             { name: "Elmer Revita and Bernadette Canlas" },
         ],
@@ -42,13 +42,13 @@ const entourageData: EntourageGroup[] = [
     {
         title: "Best Man",
         icon: Users,
-        variant: "beige",
+        variant: "brown",
         members: [{ name: "Nicole John Luceros" }],
     },
     {
         title: "Maid of Honor",
         icon: Users,
-        variant: "sage",
+        variant: "emerald",
         members: [{ name: "Maribeth Tolete" }],
     },
     {
@@ -84,16 +84,59 @@ const entourageData: EntourageGroup[] = [
     {
         title: "Flower Girl",
         icon: Sparkles,
-        variant: "pink",
+        variant: "emerald",
         members: [{ name: "Kaisie Nicolette Luceros" }],
     },
     {
         title: "Ring Bearers",
         icon: Sparkles,
-        variant: "pink",
+        variant: "brown",
         members: [
             { name: "Marc Dylan Cornelio" },
             { name: "John Maverick Plata" },
+        ],
+    },
+    {
+        title: "Candle",
+        icon: Sparkles,
+        variant: "beige",
+        members: [
+            { name: "Sandy Roy Balbuena" },
+            { name: "Mary Grace Doblon" },
+        ],
+    },
+    {
+        title: "Cord",
+        icon: Sparkles,
+        variant: "beige",
+        members: [
+            { name: "Jerome Alingod" },
+            { name: "Rochelle Sollesta" },
+        ],
+    },
+    {
+        title: "Veil",
+        icon: Sparkles,
+        variant: "beige",
+        members: [
+            { name: "Micheal Dela Cruz" },
+            { name: "Ma. Christina Arnaiz" },
+        ],
+    },
+    {
+        title: "Bible Bearer",
+        icon: Sparkles,
+        variant: "emerald",
+        members: [
+            { name: "Jhelai Schandelle Mesamin" },
+        ],
+    },
+    {
+        title: "Coin Bearer",
+        icon: Sparkles,
+        variant: "brown",
+        members: [
+            { name: "Jethro Mesamin" },
         ],
     },
 ];
@@ -103,10 +146,11 @@ const EntourageCard = ({ group }: { group: EntourageGroup }) => {
 
     // Color mapping based on your request
     const bgColors = {
-        gray: "bg-[var(--dusty-gray)]/60 border-[var(--dusty-gray)]",
-        beige: "bg-[var(--muted-beige)]/60 border-[var(--muted-beige)]",
-        sage: "bg-[var(--sage-green)]/60 border-[var(--sage-green)]",
-        pink: "bg-[var(--muted-pink)]/60 border-[var(--muted-pink)]",
+        brown: "text-primary-foreground bg-[#613411]/90 border-foreground",
+        emerald: "text-primary-foreground bg-[var(--emerald-green)]/90 border-[var(--emerald-green)]",
+        gray: "bg-[var(--dusty-gray)]/90 border-[var(--dusty-gray)]",
+        beige: "bg-[var(--muted-beige)]/90 border-[var(--muted-beige)]",
+        sage: "bg-[var(--sage-green)]/90 border-[var(--sage-green)]",
         default: "bg-white border-gray-100",
     };
 
@@ -121,20 +165,20 @@ const EntourageCard = ({ group }: { group: EntourageGroup }) => {
                 bgColors[group.variant || "default"]
             }`}
         >
-            <div className="flex items-center gap-3 mb-4 justify-center">
-                <Icon className="text-primary/60" size={20} />
-                <h3 className="text-primary text-xl font-serif font-semibold">
+            <div className="flex items-center gap-1 mb-4 justify-center">
+                <Icon className="" size={20} />
+                <h3 className="text-xl font-serif font-semibold">
                     {group.title}
                 </h3>
             </div>
-            <div className="space-y-2 text-center">
+            <div className="space-y-1 text-center">
                 {group.members.map((member, index) => (
                     <div key={index}>
-                        <p className="text-primary/80 font-sans leading-tight">
+                        <p className="font-sans leading-tight">
                             {member.name}
                         </p>
                         {member.relation && (
-                            <p className="text-primary/50 text-xs italic">
+                            <p className="text-xs italic">
                                 {member.relation}
                             </p>
                         )}

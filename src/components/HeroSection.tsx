@@ -1,10 +1,9 @@
 import { motion } from "motion/react";
+import { useMemo } from "react";
 import { useWedding } from "../contexts/WeddingContext";
 import { CountdownTimer } from "./CountdownTimer";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import heroImage from "/42873578_2185281461491166_3601597392165535744_n.jpg";
 import logoImage from "/RJ_logo.png";
-import qrCode from "/qr.jpg";
 
 const CurveTop = () => (
     <div className="absolute bottom-0 left-0 right-0">
@@ -22,8 +21,22 @@ const CurveTop = () => (
     </div>
 );
 
+const images = import.meta.glob("../assets/images/memories/*.{png,jpg,jpeg,svg,webp}", { eager: true });
+const excludedPatterns = [/exclude/i, /\/skip\//i];
+const filteredImages = Object.entries(images).filter(([path]) => {  return !excludedPatterns.some((re) => re.test(path));});
+
+export const getRandomImage = (): string => {
+  const paths = filteredImages.map(([path, mod]) => ({
+    path,
+    url: (mod as { default: string }).default,
+  }));
+  const random = paths[Math.floor(Math.random() * paths.length)];
+  return random.url;
+};
+
 export const HeroSection = () => {
     const { bride, groom, weddingDate } = useWedding();
+    const heroImage = useMemo(() => getRandomImage(), []);
 
     const formattedDate = weddingDate.toLocaleDateString("en-US", {
         weekday: "long",
@@ -93,20 +106,6 @@ export const HeroSection = () => {
                 >
                     <CountdownTimer />
                 </motion.div>
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1, delay: 1.5 }}
-                    className="mt-4"
-                >
-                    <ImageWithFallback
-                        src={qrCode}
-                        alt="QR code"
-                        className="w-full h-full object-center shrink"
-                    />
-                </motion.div>
-
-                <div className="p-30 sm:p-40 lg:p-50" />
 
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -116,7 +115,7 @@ export const HeroSection = () => {
                 >
                     <button
                         onClick={() => {
-                            window.open("https://forms.gle/Hp6bX8KzjYT8rrz57", "_blank", "noopener,noreferrer");
+                            window.open("https://docs.google.com/forms/d/e/1FAIpQLSdNIgMHGRw_FWaaTzrJOpspv2zMBkdXrxuXMMZzMrSDFSKn1A/viewform?usp=embed_facebook", "_blank", "noopener,noreferrer");
                         }}
                         className="bg-secondary font-sans hover:bg-secondary/90 text-background px-8 py-3 sm:px-10 sm:py-4 rounded-full transition-all transform hover:scale-105 shadow-xl backdrop-blur-sm border border-background/10"
                     >

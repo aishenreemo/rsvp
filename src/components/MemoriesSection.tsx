@@ -89,11 +89,11 @@ const MemoryCard = ({ image, index }: { image: GalleryImage; index: number }) =>
 };
 
 export const MemoriesSection = () => {
-    const [visibleCount, setVisibleCount] = useState(9);
+    const [visibleCount, setVisibleCount] = useState(6);
     const gallery = useMemories();
 
     const handleLoadMore = () => {
-        setVisibleCount((prev) => Math.min(prev + 9, gallery.images.length));
+        setVisibleCount((prev) => Math.min(prev + 6, gallery.images.length));
     };
 
     return (
@@ -108,12 +108,11 @@ export const MemoriesSection = () => {
                     className="text-center mb-20"
                 >
                     {/* Swapped: text-primary -> text-white */}
-                    <h2 className="text-4xl sm:text-6xl font-serif text-white mb-4">
-                        Our Memories
+                    <h2 className="text-6xl sm:text-6xl font-serif text-white mb-4">
+                        Save The Date
                     </h2>
                     <p className="text-white/70 text-xl max-w-2xl mx-auto font-sans">
-                        Capturing the moments that made our love story
-                        unforgettable.
+                        A collection of the photos we’ve taken to celebrate our upcoming wedding.
                     </p>
                 </motion.div>
 
@@ -138,7 +137,7 @@ export const MemoriesSection = () => {
                             onClick={handleLoadMore}
                             className="inline-flex items-center gap-2 px-8 py-3 bg-white text-primary rounded-full hover:bg-white/90 transition-colors shadow-lg font-semibold font-sans"
                         >
-                            Load More Memories
+                            Load More Photos
                             <ChevronDown size={20} />
                         </button>
                     </motion.div>

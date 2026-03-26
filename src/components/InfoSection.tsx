@@ -40,19 +40,17 @@ const QRCodePlaceholder = ({ label, QRimg}: { label: string, QRimg: string}) => 
 );
 
 const bgColors = {
-    gray: "bg-[var(--dusty-gray)]/60 border-[var(--dusty-gray)]",
-    beige: "bg-[var(--muted-beige)]/60 border-[var(--muted-beige)]",
-    sage: "bg-[var(--sage-green)]/60 border-[var(--sage-green)]",
-    pink: "bg-[var(--muted-pink)]/60 border-[var(--muted-pink)]",
+    gray: "bg-[var(--dusty-gray)]/90 border-[var(--dusty-gray)]",
+    beige: "bg-[var(--muted-beige)]/90 border-[var(--muted-beige)]",
+    sage: "bg-[var(--sage-green)]/90 border-[var(--sage-green)]",
     default: "bg-white border-gray-100",
 };
 
 export const InfoSection = () => {
     const codes = [
-        { label: "Sponsors", color: "gray", desc: "Dusty Gray" },
+        { label: "Sponsors", color: "gray", desc: "Gray" },
         { label: "Groomsmen", color: "beige", desc: "Muted Beige" },
         { label: "Bridesmaids", color: "sage", desc: "Sage Green" },
-        { label: "Family & Kids", color: "pink", desc: "Muted Pink" },
     ];
     return (
         <section id="info" className="py-20 bg-white">
@@ -71,19 +69,18 @@ export const InfoSection = () => {
                         Important information for our guests
                     </p>
                 </motion.div>
-
                 <div className="max-w-5xl mx-auto space-y-8">
                     <InfoCard icon={Shirt} title="Dress to Impress">
                         <div className="space-y-4">
                             <div>
                                 <h4 className="text-primary font-semibold mb-2 font-sans">
-                                    Dress Code: Semi-Formal
+                                    Dress Code: Formal
                                 </h4>
                                 <p className="text-primary/70 font-sans">
-                                    We invite you to celebrate with us in Modern Garden Formal attire, drawing inspiration from our palette of Muted Pink, Sage Green, Muted Beige, and Dusty Gray. Ladies are encouraged to wear elegant gowns or midi-dresses in these romantic tones—kindly reserving white for the bride—while gentlemen may opt for a Barong Tagalog or a tailored suit in neutral shades like gray, tan, or black.
+                                    We invite you to celebrate with us in Modern Garden Formal attire, drawing inspiration from our palette of Sage Green, Muted Beige, and Dusty Gray. Ladies are encouraged to wear elegant gowns or midi‑dresses in these romantic tones—kindly reserving white for the bride—while gentlemen may opt for a Barong Tagalog or a tailored suit in neutral shades like gray, tan, or black.
                                 </p>
                             </div>
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div className="flex flex-nowrap w-full sm:w-[60%] justify-around mx-auto">
                                 {codes.map((item) => (
                                     <div key={item.label} className="flex flex-col items-center gap-3">
                                         <div className={`w-16 h-16 rounded-full shadow-inner border-2 ${bgColors[item.color as keyof typeof bgColors]}`} />
@@ -94,6 +91,43 @@ export const InfoSection = () => {
                                     </div>
                                 ))}
                             </div>
+                            <div>
+                                <h4 className="text-primary font-semibold mb-2 font-sans">
+                                    Suggested Colors for Guests
+                                </h4>
+                                <p className="text-primary/70 font-sans">
+                                    While the main dress code is Modern Garden Formal, guests are welcome
+                                    to incorporate these complementary shades into their outfits:
+                                </p>
+                            </div>
+                            <div className="flex flex-nowrap w-full sm:w-[60%] justify-around mx-auto">
+                                {[
+                                    { hex: "#86a8c5" },
+                                    { hex: "#6b8ca3" },
+                                    { hex: "#4e6f86" },
+                                    { hex: "#3a5a75" },
+                                ].map(color => (
+                                    <div
+                                        key={color.hex}
+                                        className="flex flex-col items-center gap-2"
+                                    >
+                                    <div
+                                        className="w-14 h-14 rounded-full border"
+                                        style={{ backgroundColor: color.hex }}
+                                    />
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/*
+                                Add a guest section here.
+                                Guest people can wear this variant of colors.
+                                - #86a8c5
+                                - #6b8ca3
+                                - #4e6f86
+                                - #3a5a75
+                            */}
+
                             <p className="text-primary/60 text-sm italic mt-4 font-sans text-center">
                                 Please avoid wearing white or cream colors to
                                 respect the bride's attire.
