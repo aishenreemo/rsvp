@@ -128,6 +128,14 @@ export const MemoriesSection = () => {
                 </motion.div>
 
                 <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 max-w-7xl mx-auto space-y-8 px-2">
+                {/*
+                <div  
+                    className="grid gap-8 max-w-7xl mx-auto px-2"
+                    style={{
+                        gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",  
+                    }}
+                >
+                */}
                     {gallery.images.slice(0, visibleCount).map((image, index) => (
                         <MemoryCard
                             key={index}
