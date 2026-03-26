@@ -49,7 +49,7 @@ const bgColors = {
 export const InfoSection = () => {
     const codes = [
         { label: "Sponsors", color: "gray", desc: "Gray" },
-        { label: "Groomsmen", color: "beige", desc: "Muted Beige" },
+        { label: "Groomsmen", color: "beige", desc: "Beige" },
         { label: "Bridesmaids", color: "sage", desc: "Sage Green" },
     ];
     return (
@@ -93,7 +93,7 @@ export const InfoSection = () => {
                             </div>
                             <div>
                                 <h4 className="text-primary font-semibold mb-2 font-sans">
-                                    Suggested Colors for Guests
+                                    Colors for Guests
                                 </h4>
                                 <p className="text-primary/70 font-sans">
                                     While the main dress code is Modern Garden Formal, guests are welcome
@@ -129,8 +129,7 @@ export const InfoSection = () => {
                             */}
 
                             <p className="text-primary/60 text-sm italic mt-4 font-sans text-center">
-                                Please avoid wearing white or cream colors to
-                                respect the bride's attire.
+                                Please join us in formal attire as we celebrate this special day. Kindly avoid wearing white or off-white shades.
                             </p>
                         </div>
                     </InfoCard>

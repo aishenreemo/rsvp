@@ -9,7 +9,7 @@ interface TimelineEvent {
 
 const events: TimelineEvent[] = [
     {
-        time: "3:30 PM",
+        time: "4:00 PM",
         title: "Guests Should Be Seated",
         description: "Guests begin to arrive and are seated",
     },
@@ -36,7 +36,7 @@ const events: TimelineEvent[] = [
     {
         time: "9:00 PM",
         title: "End of Program",
-        description: "Our first dance as husband and wife",
+        description: "",
     },
 ];
 

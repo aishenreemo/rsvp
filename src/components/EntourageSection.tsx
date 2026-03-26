@@ -40,6 +40,33 @@ const entourageData: EntourageGroup[] = [
         ],
     },
     {
+        title: "Cord",
+        icon: Sparkles,
+        variant: "beige",
+        members: [
+            { name: "Jerome Alingod" },
+            { name: "Rochelle Sollesta" },
+        ],
+    },
+    {
+        title: "Veil",
+        icon: Sparkles,
+        variant: "beige",
+        members: [
+            { name: "Micheal Dela Cruz" },
+            { name: "Ma. Cristina Arnaiz" },
+        ],
+    },
+    {
+        title: "Candle",
+        icon: Sparkles,
+        variant: "beige",
+        members: [
+            { name: "Sandy Roy Balbuena" },
+            { name: "Mary Grace Doblon" },
+        ],
+    },
+    {
         title: "Best Man",
         icon: Users,
         variant: "brown",
@@ -97,33 +124,6 @@ const entourageData: EntourageGroup[] = [
         ],
     },
     {
-        title: "Candle",
-        icon: Sparkles,
-        variant: "beige",
-        members: [
-            { name: "Sandy Roy Balbuena" },
-            { name: "Mary Grace Doblon" },
-        ],
-    },
-    {
-        title: "Cord",
-        icon: Sparkles,
-        variant: "beige",
-        members: [
-            { name: "Jerome Alingod" },
-            { name: "Rochelle Sollesta" },
-        ],
-    },
-    {
-        title: "Veil",
-        icon: Sparkles,
-        variant: "beige",
-        members: [
-            { name: "Micheal Dela Cruz" },
-            { name: "Ma. Christina Arnaiz" },
-        ],
-    },
-    {
         title: "Bible Bearer",
         icon: Sparkles,
         variant: "emerald",
@@ -148,7 +148,7 @@ const EntourageCard = ({ group }: { group: EntourageGroup }) => {
     const bgColors = {
         brown: "text-primary-foreground bg-[#613411]/90 border-foreground",
         emerald: "text-primary-foreground bg-[var(--emerald-green)]/90 border-[var(--emerald-green)]",
-        gray: "bg-[var(--dusty-gray)]/90 border-[var(--dusty-gray)]",
+        gray: "text-primary-foreground bg-[var(--dusty-gray)] border-[var(--dusty-gray)]",
         beige: "bg-[var(--muted-beige)]/90 border-[var(--muted-beige)]",
         sage: "bg-[var(--sage-green)]/90 border-[var(--sage-green)]",
         default: "bg-white border-gray-100",
