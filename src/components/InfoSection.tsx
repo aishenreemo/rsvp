@@ -77,7 +77,7 @@ export const InfoSection = () => {
                                     Dress Code: Formal
                                 </h4>
                                 <p className="text-primary/70 font-sans">
-                                    We invite you to celebrate with us in Modern Garden Formal attire, drawing inspiration from our palette of Sage Green, Muted Beige, and Dusty Gray. Ladies are encouraged to wear elegant gowns or midi‑dresses in these romantic tones—kindly reserving white for the bride—while gentlemen may opt for a Barong Tagalog or a tailored suit in neutral shades like gray, tan, or black.
+                                    Please join us in formal attire as we celebrate this special day. Kindly avoid wearing white or off-white shades.
                                 </p>
                             </div>
                             <div className="flex flex-nowrap w-full sm:w-[60%] justify-around mx-auto">
@@ -92,15 +92,11 @@ export const InfoSection = () => {
                                 ))}
                             </div>
                             <div>
-                                <h4 className="text-primary font-semibold mb-2 font-sans">
+                                <h4 className="text-center text-primary font-semibold mb-2 font-sans">
                                     Colors for Guests
                                 </h4>
-                                <p className="text-primary/70 font-sans">
-                                    While the main dress code is Modern Garden Formal, guests are welcome
-                                    to incorporate these complementary shades into their outfits:
-                                </p>
                             </div>
-                            <div className="flex flex-nowrap w-full sm:w-[60%] justify-around mx-auto">
+                            <div className="flex flex-nowrap w-full sm:w-[40%] justify-around mx-auto">
                                 {[
                                     { hex: "#86a8c5" },
                                     { hex: "#6b8ca3" },
@@ -118,19 +114,6 @@ export const InfoSection = () => {
                                     </div>
                                 ))}
                             </div>
-
-                            {/*
-                                Add a guest section here.
-                                Guest people can wear this variant of colors.
-                                - #86a8c5
-                                - #6b8ca3
-                                - #4e6f86
-                                - #3a5a75
-                            */}
-
-                            <p className="text-primary/60 text-sm italic mt-4 font-sans text-center">
-                                Please join us in formal attire as we celebrate this special day. Kindly avoid wearing white or off-white shades.
-                            </p>
                         </div>
                     </InfoCard>
 
