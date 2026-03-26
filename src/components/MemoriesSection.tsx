@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ChevronDown } from "lucide-react";
+import videoSrc from '/prenupvid.mp4';
 
 interface GalleryImage {
     src: string;
@@ -121,10 +122,12 @@ export const MemoriesSection = () => {
                     className="mb-12 text-center"        
                 >          
                     <video            
-                        src="/prenupvid.mp4"
+                        playsInline
                         controls
                         className="mx-auto max-w-full rounded-2xl shadow-xl"
-                    />
+                    >
+                        <source src={videoSrc} type="video/mp4"/>
+                    </video>
                 </motion.div>
 
                 <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 max-w-7xl mx-auto space-y-8 px-2">
