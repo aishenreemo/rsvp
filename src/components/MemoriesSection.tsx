@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import { ChevronDown } from "lucide-react";
-import videoSrc from '/prenupvid.mp4';
+import videoSrc from '../assets/prenupvid.mp4';
 
 interface GalleryImage {
     src: string;

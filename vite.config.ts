@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react(), tailwindcss()],
-    assetsInclude: ["**/*.jpg", "**/*.png", "**/*.svg", "**/*.mp3"],
+    assetsInclude: ["**/*.jpg", "**/*.png", "**/*.svg", "**/*.mp3", "**/*.mp4"],
     server: {
         allowedHosts: [".serveousercontent.com"]
     }
