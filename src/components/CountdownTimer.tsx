@@ -10,10 +10,10 @@ interface TimeLeft {
 
 const TimeUnit = ({ value, label }: { value: number; label: string }) => (
     <div className="flex flex-col items-center w-16 sm:w-24">
-        <div className="text-4xl sm:text-6xl font-serif text-beige text-shadow-[1px_1px_1px_var(--background)] tabular-nums">
+        <div className="text-4xl sm:text-6xl font-serif text-shadow-[1px_1px_1px_var(--background)] tabular-nums">
             {value.toString().padStart(2, "0")}
         </div>
-        <div className="mt-2 text-[10px] sm:text-sm text-shadow-[1px_1px_1px_var(--background)] text-background uppercase tracking-widest font-light drop-shadow-md">
+        <div className="mt-2 text-[10px] sm:text-sm text-shadow-[1px_1px_1px_var(--background)] text-choco-brown uppercase tracking-widest font-light drop-shadow-md">
             {label}
         </div>
     </div>
